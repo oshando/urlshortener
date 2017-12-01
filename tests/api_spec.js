@@ -8,11 +8,11 @@ let createLocation = '/create';
 let user = '';
 let password = '';
 
-if(process.env.USER) {
+if (process.env.USER) {
     user = trim(process.env.USER);
 }
 
-if(process.env.PASSWORD) {
+if (process.env.PASSWORD) {
     password = trim(process.env.PASSWORD);
 }
 
@@ -20,8 +20,8 @@ frisby.globalSetup({
   timeout: 10000,
 });
 
-if(process.env.AUTH === 'true') {
-    if(!user || !password) {
+if (process.env.AUTH === 'true') {
+    if (!user || !password) {
         console.error('USER and PASSWORD must be set if AUTH=true');
         process.exit(1);
     }
